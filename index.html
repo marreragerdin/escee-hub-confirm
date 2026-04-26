@@ -1,231 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Confirmed - EsCee Hub</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 48px 32px;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            animation: scaleIn 0.6s ease-out 0.2s both;
-        }
-
-        @keyframes scaleIn {
-            from {
-                transform: scale(0);
-            }
-
-            to {
-                transform: scale(1);
-            }
-        }
-
-        .checkmark {
-            width: 40px;
-            height: 40px;
-            border: 4px solid white;
-            border-top: none;
-            border-right: none;
-            transform: rotate(-45deg);
-            margin-bottom: 8px;
-        }
-
-        h1 {
-            color: #1F2937;
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .subtitle {
-            color: #6B7280;
-            font-size: 18px;
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-
-        .app-name {
-            color: #1E3A8A;
-            font-weight: 700;
-            font-size: 24px;
-            margin-bottom: 24px;
-        }
-
-        .instructions {
-            background: #F3F4F6;
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-            text-align: left;
-        }
-
-        .instructions h3 {
-            color: #1F2937;
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .step {
-            display: flex;
-            align-items: start;
-            margin-bottom: 12px;
-            color: #4B5563;
-            font-size: 15px;
-        }
-
-        .step-number {
-            background: #1E3A8A;
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 600;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-
-        .close-button {
-            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
-            color: white;
-            border: none;
-            padding: 14px 32px;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
-        }
-
-        .close-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(30, 58, 138, 0.4);
-        }
-
-        .close-button:active {
-            transform: translateY(0);
-        }
-
-        .footer {
-            margin-top: 24px;
-            color: #9CA3AF;
-            font-size: 14px;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 32px 24px;
-            }
-
-            h1 {
-                font-size: 26px;
-            }
-
-            .subtitle {
-                font-size: 16px;
-            }
-        }
+    <title>EsCee Hub - Email Confirmed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style> 
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+        body { font-family: 'Outfit', sans-serif; background-color: #F4F4F4; }
+        .confirmation { display: flex; flex-direction: column; justify-content: flex-start; align-items: center; min-height: 100vh; width: 100%; padding: 0 0 2rem 0; }   
+        .confirmation-heading { height: 45vh; display: flex; flex-direction: column; justify-content: center; width: 100%; gap: 4rem; background: linear-gradient(135deg, #072059 0%, #0B328C 50%, #0F45BF 100%); color: #FFFFFF; padding: 2rem 3vw 5rem 3vw; align-items: center; border-bottom-left-radius: 3rem; border-bottom-right-radius: 3rem; flex-shrink: 0; }
+        .confirmation-title { display: flex; flex-direction: row; align-items: center; gap: 0.5rem; justify-content: center; }
+        .confirmation-title h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.2; }
+        .confirmation-title img { width: auto; height: 100px; }
+        .confirmation-content { padding: 1.5rem; background-color: #FFFFFF; border-radius: 2.5rem; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 0.8rem; max-width: 550px; color: #1D1D1D; z-index: 2; width: 85%; margin-top: -10vh; }
+        .top-content  { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-top: 2rem; gap: 0.8rem; }
+        .top-content h1 { font-size: 1.6rem; font-weight: 600; }
+        .middle-content { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1.5rem; gap: 0.8rem; }
+        .middle-content p { margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; color: #616161; font-weight: 400; }
+        .bottom-content { margin-top: 2rem; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 0.8rem; text-align: left; color: #616161; background-color: #F3F4G6; padding: 1.5rem; border-radius: 1.5rem; }
+        .bottom-content h2 { font-size: 0.9rem; font-weight: 600; }
+        .bottom-content p { font-size: 0.9rem; line-height: 1.5; color: #616161; font-weight: 400; }
+        .confirmation-footer { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; padding-bottom: 2rem; position: relative; margin-top: 3rem; gap: 0.5rem; z-index: 1; }
+        .confirmation-footer img { width: 50px; height: 50px; }
+        .confirmation-footer p { font-size: 0.7rem; text-align: center; padding: 0 5rem; line-height: 2; color: #616161; font-weight: 400; }
+        
+        /* STYLE FOR THE LINK */
+        .confirm-link { display: block; background: #0F45BF; color: #FFFFFF !important; padding: 1rem; border-radius: 1rem; text-decoration: none; font-weight: 600; margin-top: 1rem; }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="success-icon">
-            <div class="checkmark"></div>
-        </div>
-
-        <h1>Email Confirmed!</h1>
-
-        <div class="app-name">🎓 EsCee Hub PLV</div>
-
-        <p class="subtitle">
-            Your email has been successfully verified. You can now access all features of EsCee Hub!
-        </p>
-
-        <div class="instructions">
-            <h3>Next Steps:</h3>
-            <div class="step">
-                <span class="step-number">1</span>
-                <span>Close this window and return to the EsCee Hub app</span>
-            </div>
-            <div class="step">
-                <span class="step-number">2</span>
-                <span>Log in with your email and password</span>
-            </div>
-            <div class="step">
-                <span class="step-number">3</span>
-                <span>Start exploring your student hub!</span>
+    <section class="confirmation">
+        <div class="confirmation-heading">
+            <div class="confirmation-title">
+                <!-- REPLACE WITH YOUR PUBLIC STORAGE URL -->
+                <img src="PASTE_LOGO_URL_HERE" alt="EsCee Hub Logo">
+                <h1>EsCee<br>Hub</h1>
             </div>
         </div>
 
-        <button class="close-button" onclick="window.close()">
-            Close This Window
-        </button>
+        <div class="confirmation-content">
+            <div class="top-content">
+                <div class="top-text">
+                    <h1>Email Confirmed!</h1>
+                </div>
+            </div>
 
-        <div class="footer">
-            Pamantasan ng Lungsod ng Valenzuela<br>
-            © 2026 EsCee Hub. All rights reserved.
+            <div class="middle-content">
+                <p>Your email has been successfully verified. You can now access the mobile app of EsCee Hub!</p>
+                
+                <!-- SUPABASE BUTTON -->
+                <h3>CONFIRM YOUR EMAIL</h3>
+                <a href="{{ .ConfirmationURL }}" class="confirm-link">Confirm your email</a>
+            </div>
+
+            <div class="bottom-content">
+                <h2>Next Steps:</h2>
+                <p>1. Open the EsCee Hub Mobile App</p>
+                <p>2. Log in using student ID and password</p>
+                <p>3. Start your journey!</p>
+            </div>
         </div>
-    </div>
 
-    <script>
-        // Auto-close after 10 seconds if user doesn't click
-        setTimeout(() => {
-            window.close();
-        }, 10000);
-    </script>
+        <footer class="confirmation-footer">
+            <!-- REPLACE WITH YOUR PUBLIC STORAGE URL -->
+            <img src="PASTE_PLV_LOGO_URL_HERE" alt="">
+            <p>Having trouble logging in? Coordinate with the social contract office to fix the issue.</p>
+        </footer>
+    </section>
 </body>
-
 </html>
